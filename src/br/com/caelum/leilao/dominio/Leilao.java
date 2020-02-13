@@ -3,6 +3,7 @@ package br.com.caelum.leilao.dominio;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Leilao {
 
@@ -44,6 +45,19 @@ public class Leilao {
 		return Collections.unmodifiableList(lances);
 	}
 
-	
-	
+
+	public void dobraLance(Usuario usuario) {
+
+		List<Lance> lancesUsuario = todosLancesDoUsuario(usuario);
+
+		if(lancesUsuario.size() > 0){
+			Lance ultimoLanceUsuario = lancesUsuario.get(lancesUsuario.size() - 1);
+			propoe(new Lance(ultimoLanceUsuario.getUsuario(), ultimoLanceUsuario.getValor()*2));
+		}
+
+	}
+
+	private List<Lance> todosLancesDoUsuario(Usuario usuario) {
+		return lances.stream().filter(u -> u.getUsuario().equals(usuario)).collect(Collectors.toList());
+	}
 }

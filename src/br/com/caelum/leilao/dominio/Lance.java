@@ -17,7 +17,12 @@ public class Lance {
 	public double getValor() {
 		return valor;
 	}
-	
-	
-	
+
+	@Override
+	public String toString() {
+		return "Lance{" +
+				"usuario=" + usuario.getNome() +
+				", valor=" + valor +
+				'}';
+	}
 }

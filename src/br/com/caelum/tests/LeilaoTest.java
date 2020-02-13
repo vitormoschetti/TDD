@@ -3,6 +3,7 @@ package br.com.caelum.tests;
 import br.com.caelum.leilao.dominio.Lance;
 import br.com.caelum.leilao.dominio.Leilao;
 import br.com.caelum.leilao.dominio.Usuario;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -75,6 +76,37 @@ public class LeilaoTest {
 
         assertEquals(10, leilao.getLances().size());
         assertEquals(6500.0, leilao.getLances().get(leilao.getLances().size()-1).getValor());
+
+    }
+
+    @Test
+    public void deveDobrarOLance(){
+        Leilao leilao = new Leilao("Mackbook pro 15");
+
+        Usuario vitor = new Usuario("vitor");
+        Usuario carlos = new Usuario("carlos");
+        Usuario matias = new Usuario("matias");
+
+        leilao.dobraLance(vitor);
+        Assertions.assertEquals(0, leilao.getLances().size());
+
+        leilao.propoe(new Lance(vitor, 500.0));
+        leilao.propoe(new Lance(carlos, 500.0));
+        leilao.propoe(new Lance(vitor, 10000.0));
+        leilao.propoe(new Lance(carlos, 1500.0));
+
+
+        leilao.dobraLance(vitor);
+        leilao.dobraLance(matias);
+
+        Assertions.assertEquals(5, leilao.getLances().size());
+        Assertions.assertEquals(20000.0, leilao.getLances().stream().mapToDouble(Lance::getValor).max().getAsDouble());
+
+        leilao.dobraLance(vitor);
+
+        Assertions.assertEquals(5, leilao.getLances().size());
+        Assertions.assertEquals(20000.0, leilao.getLances().stream().mapToDouble(Lance::getValor).max().getAsDouble());
+
 
     }
 
