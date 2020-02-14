@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a19aa1be-06ce-4a0d-a164-73452cf117d6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/br/com/caelum/leilao/dominio/Avaliador.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/br/com/caelum/tests/AvaliadorTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/br/com/caelum/tests/CriadorDeLeilao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/br/com/caelum/tests/LeilaoTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/br/com/caelum/tests/CriadorDeLeilao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/br/com/caelum/leilao/dominio/Lance.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/br/com/caelum/leilao/dominio/Lance.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/br/com/caelum/leilao/dominio/Leilao.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/br/com/caelum/leilao/dominio/Leilao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/br/com/caelum/leilao/dominio/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/br/com/caelum/leilao/dominio/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/caelum/leilao/dominio/Avaliador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/caelum/leilao/dominio/Avaliador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/caelum/tests/AvaliadorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/caelum/tests/AvaliadorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/caelum/tests/LeilaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/caelum/tests/LeilaoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

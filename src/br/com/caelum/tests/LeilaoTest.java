@@ -16,7 +16,7 @@ public class LeilaoTest {
         leilao.propoe(new Lance(new Usuario("Steve"), 2000.0));
 
         assertEquals(1, leilao.getLances().size());
-        assertEquals(2000.0, leilao.getLances().get(0).getValor());
+        assertEquals(2000.0, leilao.getLances().get(0).getValor(), 1);
 
     }
 
@@ -33,7 +33,6 @@ public class LeilaoTest {
     }
 
     //Um usuario não pode fazer dois lances seguidos
-
     @Test
     public void naoDeveAceitarDoisLancesSeguidosDoMesmoUsuario() {
         Leilao leilao = new Leilao("Mackbook Pro 15");
@@ -43,7 +42,7 @@ public class LeilaoTest {
         leilao.propoe(new Lance(u, 4000.0));
 
         assertEquals(1, leilao.getLances().size());
-        assertEquals(2000.0, leilao.getLances().get(0).getValor());
+        assertEquals(2000.0, leilao.getLances().get(0).getValor(), 0.1);
 
     }
 
@@ -74,7 +73,7 @@ public class LeilaoTest {
         leilao.propoe(new Lance(u1, 7000.0));
 
         assertEquals(10, leilao.getLances().size());
-        assertEquals(6500.0, leilao.getLances().get(leilao.getLances().size()-1).getValor());
+        assertEquals(6500.0, leilao.getLances().get(leilao.getLances().size()-1).getValor(),1);
 
     }
 
@@ -99,12 +98,12 @@ public class LeilaoTest {
         leilao.dobraLance(matias);
 
         assertEquals(5, leilao.getLances().size());
-        assertEquals(20000.0, leilao.getLances().stream().mapToDouble(Lance::getValor).max().getAsDouble());
+        assertEquals(20000.0, leilao.getLances().stream().mapToDouble(Lance::getValor).max().getAsDouble(), 0.1);
 
         leilao.dobraLance(vitor);
 
         assertEquals(5, leilao.getLances().size());
-        assertEquals(20000.0, leilao.getLances().stream().mapToDouble(Lance::getValor).max().getAsDouble());
+        assertEquals(20000.0, leilao.getLances().stream().mapToDouble(Lance::getValor).max().getAsDouble(), 1);
 
 
     }
