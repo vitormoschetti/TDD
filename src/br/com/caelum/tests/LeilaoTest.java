@@ -3,16 +3,29 @@ package br.com.caelum.tests;
 import br.com.caelum.leilao.dominio.Lance;
 import br.com.caelum.leilao.dominio.Leilao;
 import br.com.caelum.leilao.dominio.Usuario;
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class LeilaoTest {
 
+    private Usuario jose;
+    private Usuario joao;
+    private Usuario maria;
+    private Leilao leilao;
+
+    @Before
+    public void setUp(){
+        jose = new Usuario("josé");
+        joao = new Usuario("joão");
+        maria = new Usuario("maria");
+        leilao = new Leilao("Playstation 3 novo em folha");
+    }
+
     @Test
     public void deveReceberApenasUmLance() {
 
-        Leilao leilao = new Leilao("Macbook Pro 15");
         leilao.propoe(new Lance(new Usuario("Steve"), 2000.0));
 
         assertEquals(1, leilao.getLances().size());
@@ -23,23 +36,20 @@ public class LeilaoTest {
     @Test
     public void deveReceberVariosLances() {
 
-        Leilao leilao = new Leilao("Macbook Pro 15");
         leilao.propoe(new Lance(new Usuario("Steve"), 2000.0));
         leilao.propoe(new Lance(new Usuario("Mark"), 2300.0));
 
         assertEquals(2, leilao.getLances().size());
-        assertEquals(2000.0, leilao.getLances().get(0).getValor());
+        assertEquals(2000.0, leilao.getLances().get(0).getValor(), 1);
 
     }
 
     //Um usuario não pode fazer dois lances seguidos
     @Test
     public void naoDeveAceitarDoisLancesSeguidosDoMesmoUsuario() {
-        Leilao leilao = new Leilao("Mackbook Pro 15");
-        Usuario u = new Usuario("Vitor Moschetti");
 
-        leilao.propoe(new Lance(u, 2000.0));
-        leilao.propoe(new Lance(u, 4000.0));
+        leilao.propoe(new Lance(jose, 2000.0));
+        leilao.propoe(new Lance(jose, 4000.0));
 
         assertEquals(1, leilao.getLances().size());
         assertEquals(2000.0, leilao.getLances().get(0).getValor(), 0.1);
@@ -50,27 +60,23 @@ public class LeilaoTest {
     @Test
     public void naoDeveAceitarMaisDoQue5LancesDeUmMesmoUsuario(){
 
-        Leilao leilao = new Leilao("Mackbook Pro 15");
-        Usuario u1 = new Usuario("Vitor Moschetti");
-        Usuario u2 = new Usuario("Amanda Sierra");
+        leilao.propoe(new Lance(jose, 2000.0));
+        leilao.propoe(new Lance(joao, 2500.0));
 
-        leilao.propoe(new Lance(u1, 2000.0));
-        leilao.propoe(new Lance(u2, 2500.0));
+        leilao.propoe(new Lance(jose, 3000.0));
+        leilao.propoe(new Lance(joao, 3500.0));
 
-        leilao.propoe(new Lance(u1, 3000.0));
-        leilao.propoe(new Lance(u2, 3500.0));
+        leilao.propoe(new Lance(jose, 4000.0));
+        leilao.propoe(new Lance(joao, 4500.0));
 
-        leilao.propoe(new Lance(u1, 4000.0));
-        leilao.propoe(new Lance(u2, 4500.0));
+        leilao.propoe(new Lance(jose, 5000.0));
+        leilao.propoe(new Lance(joao, 5500.0));
 
-        leilao.propoe(new Lance(u1, 5000.0));
-        leilao.propoe(new Lance(u2, 5500.0));
-
-        leilao.propoe(new Lance(u1, 6000.0));
-        leilao.propoe(new Lance(u2, 6500.0));
+        leilao.propoe(new Lance(jose, 6000.0));
+        leilao.propoe(new Lance(joao, 6500.0));
 
         //Não deve sair na lista
-        leilao.propoe(new Lance(u1, 7000.0));
+        leilao.propoe(new Lance(jose, 7000.0));
 
         assertEquals(10, leilao.getLances().size());
         assertEquals(6500.0, leilao.getLances().get(leilao.getLances().size()-1).getValor(),1);
@@ -79,33 +85,35 @@ public class LeilaoTest {
 
     @Test
     public void deveDobrarOLance(){
-        Leilao leilao = new Leilao("Mackbook pro 15");
-
-        Usuario vitor = new Usuario("vitor");
-        Usuario carlos = new Usuario("carlos");
-        Usuario matias = new Usuario("matias");
-
-        leilao.dobraLance(vitor);
+        leilao.dobraLance(joao);
         assertEquals(0, leilao.getLances().size());
 
-        leilao.propoe(new Lance(vitor, 500.0));
-        leilao.propoe(new Lance(carlos, 500.0));
-        leilao.propoe(new Lance(vitor, 10000.0));
-        leilao.propoe(new Lance(carlos, 1500.0));
+        leilao.propoe(new Lance(joao, 500.0));
+        leilao.propoe(new Lance(maria, 500.0));
+        leilao.propoe(new Lance(joao, 10000.0));
+        leilao.propoe(new Lance(maria, 1500.0));
 
-
-        leilao.dobraLance(vitor);
-        leilao.dobraLance(matias);
+        leilao.dobraLance(joao);
+        leilao.dobraLance(jose);
 
         assertEquals(5, leilao.getLances().size());
         assertEquals(20000.0, leilao.getLances().stream().mapToDouble(Lance::getValor).max().getAsDouble(), 0.1);
 
-        leilao.dobraLance(vitor);
+        leilao.dobraLance(joao);
 
         assertEquals(5, leilao.getLances().size());
         assertEquals(20000.0, leilao.getLances().stream().mapToDouble(Lance::getValor).max().getAsDouble(), 1);
 
+    }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void deveLancarExceptionComValorNulo(){
+        leilao.propoe(new Lance(joao, 0));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void deveLancarExceptionComValorNegativo(){
+        leilao.propoe(new Lance(joao, -1));
     }
 
 }
