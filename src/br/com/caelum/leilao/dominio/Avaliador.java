@@ -15,6 +15,10 @@ public class Avaliador {
 
     public void avalia(Leilao leilao) {
 
+        if(leilao.getLances().isEmpty()) {
+            throw new RuntimeException("Não há lances para avaliar");
+        }
+
         OptionalDouble maiorLance = leilao.getLances().stream().mapToDouble(Lance::getValor).max();
         if(maiorLance.isPresent()) this.maiorLance = maiorLance.getAsDouble();
 

@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a19aa1be-06ce-4a0d-a164-73452cf117d6" name="Default Changelist" comment="" />
+    <list default="true" id="a19aa1be-06ce-4a0d-a164-73452cf117d6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/br/com/caelum/leilao/dominio/Avaliador.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/br/com/caelum/tests/AvaliadorTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/br/com/caelum/tests/CriadorDeLeilao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/br/com/caelum/tests/LeilaoTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/br/com/caelum/tests/CriadorDeLeilao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/br/com/caelum/leilao/dominio/Lance.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/br/com/caelum/leilao/dominio/Lance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/br/com/caelum/leilao/dominio/Leilao.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/br/com/caelum/leilao/dominio/Leilao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/br/com/caelum/leilao/dominio/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/br/com/caelum/leilao/dominio/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/caelum/leilao/dominio/Avaliador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/caelum/leilao/dominio/Avaliador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/caelum/tests/AvaliadorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/caelum/tests/AvaliadorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/caelum/tests/LeilaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/caelum/tests/LeilaoTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -13,6 +32,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Xd8kjwsgtEK3KsGCUsB9Z1Lw5k" />
   <component name="ProjectViewState">
@@ -26,7 +48,10 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="extract.method.default.visibility" value="private" />
+    <property name="findjar.last.used.dir" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/junit-4.13.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -126,6 +151,10 @@
     <configuration />
   </component>
   <component name="WindowStateProjectService">
+    <state x="275" y="39" key="#HTTP_Proxy" timestamp="1581689558225">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="39" key="#HTTP_Proxy/0.0.1366.728@0.0.1366.728" timestamp="1581689558225" />
     <state x="167" y="125" width="1099" height="543" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1581379820233">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
@@ -146,9 +175,14 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="469" y="283" width="494" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/67.27.1299.741@67.27.1299.741" timestamp="1581370604659" />
-    <state x="338" y="141" width="735" height="513" key="FileChooserDialogImpl" timestamp="1581369701087">
-      <screen x="67" y="27" width="1299" height="741" />
+    <state x="479" y="270" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1581625564119">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="479" y="270" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1366.728@0.0.1366.728" timestamp="1581625564119" />
+    <state x="285" y="112" width="735" height="513" key="FileChooserDialogImpl" timestamp="1581690286904">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="285" y="112" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1581690286904" />
     <state x="338" y="141" width="735" height="513" key="FileChooserDialogImpl/67.27.1299.741@67.27.1299.741" timestamp="1581369701087" />
     <state width="1345" height="372" key="GridCell.Tab.0.bottom" timestamp="1581618041832">
       <screen x="0" y="0" width="1366" height="728" />
@@ -186,9 +220,10 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state width="1253" height="219" key="GridCell.Tab.1.right/67.27.1299.741@67.27.1299.741" timestamp="1581381629060" />
-    <state x="199" y="27" width="1024" height="741" key="SettingsEditor" timestamp="1581369864292">
-      <screen x="67" y="27" width="1299" height="741" />
+    <state x="139" y="0" width="1024" height="741" key="SettingsEditor" timestamp="1581690291654">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="139" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1581690291654" />
     <state x="199" y="27" width="1024" height="741" key="SettingsEditor/67.27.1299.741@67.27.1299.741" timestamp="1581369864292" />
     <state x="372" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1581364763885">
       <screen x="67" y="27" width="1299" height="741" />
